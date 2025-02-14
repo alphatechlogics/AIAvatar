@@ -12,7 +12,7 @@ Generate realistic, high-quality avatars that preserve your unique facial featur
 
 **LightX AI Cartoon**  
 Transform your photo into a stylized, full-body cartoon character with bold outlines, exaggerated features, and vibrant colors—ideal for creative projects and marketing materials.  
-[LightX AI Cartoon API Docs](https://docs.lightxeditor.com/api/ai-caricature-generator)
+[LightX AI Cartoon API Docs](https://docs.lightxeditor.com/api/ai-cartoon-generator)
 
 The app workflow includes:
 
