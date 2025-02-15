@@ -144,7 +144,6 @@ def main():
         st.image(image, use_container_width=True)
 
         # 1) Request presigned URL from LightX
-        st.write("Requesting presigned upload URL from LightX...")
         presigned_response = get_presigned_url(
             api_key, file_size, content_type)
         if presigned_response.get("statusCode") != 2000:
@@ -160,7 +159,6 @@ def main():
             return
 
         # 2) Upload image to S3 using the presigned URL
-        st.write("Uploading image to S3...")
         if not upload_file_to_s3(presigned_url, file_bytes, content_type):
             st.error("Image upload failed.")
             return
@@ -172,7 +170,6 @@ def main():
         else:
             endpoint = "https://api.lightxeditor.com/external/api/v1/cartoon"
 
-        st.write(f"Requesting {service_option} generation from LightX...")
         gen_response = request_generation(
             api_key, endpoint, final_image_url, text_prompt)
         if gen_response.get("statusCode") != 2000:
@@ -185,13 +182,11 @@ def main():
             st.error("No orderId received from the generation request.")
             return
 
-        st.write(f"{service_option} generation started. Order ID: {order_id}")
-
         # 4) Poll for order status (up to 5 retries, every 3 seconds)
         poll_count = 0
         max_retries = 5
         output_url = None
-        st.write("Polling for order status...")
+
         while poll_count < max_retries:
             poll_count += 1
             time.sleep(3)
@@ -200,7 +195,6 @@ def main():
                 st.warning(f"Status check failed on attempt {poll_count}.")
                 continue
             status = status_response.get("body", {}).get("status")
-            st.write(f"Attempt {poll_count}: status = {status}")
             if status == "active":
                 output_url = status_response.get("body", {}).get("output")
                 break
