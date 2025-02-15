@@ -141,7 +141,7 @@ def main():
         # Display the uploaded image
         image = Image.open(BytesIO(file_bytes)).convert("RGB")
         st.subheader("Uploaded Image")
-        st.image(image, use_column_width=True)
+        st.image(image, use_container_width=True)
 
         # 1) Request presigned URL from LightX
         st.write("Requesting presigned upload URL from LightX...")
@@ -214,7 +214,7 @@ def main():
 
         # 5) Display final output image
         st.subheader(f"Your {service_option} Output")
-        st.image(output_url, use_column_width=True)
+        st.image(output_url, use_container_width=True)
 
 
 if __name__ == "__main__":
