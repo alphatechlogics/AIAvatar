@@ -2,6 +2,8 @@
 
 Welcome to the **LightX AI Services** app! This Streamlit application lets you transform your personal photo into either a personalized AI Avatar or a professional full-body cartoon character using the LightX APIs.
 
+![](https://raw.github.com/alphatechlogics/AIAvatar/ea8ed3eac4fa0b51daf41caff0bf204fffa10442/Screenshot%202025-06-17%20222142.png)
+
 ---
 
 ## Overview 📖
